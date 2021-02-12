@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Controls : MonoBehaviour
 {
-    private Rigidbody2D controller;
-    public float MoveSpeed;
+    private CharacterController controller;
+    public float moveSpeed;
+    public float turnSpeed;
     public BoxCollider2D Hitbox;
     public BoxCollider2D Hurtbox;
 
@@ -13,7 +14,7 @@ public class Controls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        controller = this.GetComponent<Rigidbody2D>();
+        controller = this.GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -24,9 +25,12 @@ public class Controls : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 v = new Vector3(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
-
-        controller.transform.Translate(v.normalized * MoveSpeed);
+        //loosely modeled off of https://answers.unity.com/questions/122786/simple-tank-controller.html
+        Quaternion rotation = Quaternion.Euler(0, 0, Input.GetAxis("Horizontal") * turnSpeed);
+        transform.rotation *= rotation;
+        
+        Vector3 movDir = rotation * (transform.up * -Input.GetAxis("Vertical") * moveSpeed);
+        controller.Move(movDir);
 
     }
 }
