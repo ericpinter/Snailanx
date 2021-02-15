@@ -152,7 +152,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5228637
 MonoBehaviour:
@@ -863,7 +863,7 @@ RectTransform:
   m_Children:
   - {fileID: 1706472488}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4546,7 +4546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2127694673}
-  boundryPercent: 0.1
+  boundryPercent: 0.25
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -4801,7 +4801,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -5994,7 +5994,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7918956086261175009, guid: 90452036f53c641418b1da43bed422c1, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7918956086261175009, guid: 90452036f53c641418b1da43bed422c1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6239,7 +6239,7 @@ Transform:
   - {fileID: 501599930}
   - {fileID: 684378287}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1157378650
 PrefabInstance:
@@ -6292,6 +6292,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5059056300232432376, guid: d33b96b7a84658b4ca4c730999eaf8e2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6066875753609118150, guid: d33b96b7a84658b4ca4c730999eaf8e2, type: 3}
+      propertyPath: MoveSpeed
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 8175171645750539506, guid: d33b96b7a84658b4ca4c730999eaf8e2, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -6310,7 +6318,7 @@ GameObject:
   - component: {fileID: 1169511814}
   m_Layer: 0
   m_Name: Spikebox
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6419,7 +6427,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1586270505
 PrefabInstance:
@@ -6492,7 +6500,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7918956086261175004, guid: 90452036f53c641418b1da43bed422c1, type: 3}
       propertyPath: snailwords
-      value: Heyyy, DON'T BE RUDE, I DIDN'T STEAL YOUR THING..
+      value: HEYY, DON'T BE RUDE, I DIDN'T STEAL YOUR THING..
       objectReference: {fileID: 0}
     - target: {fileID: 7918956086261175005, guid: 90452036f53c641418b1da43bed422c1, type: 3}
       propertyPath: m_Name
@@ -6500,7 +6508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7918956086261175009, guid: 90452036f53c641418b1da43bed422c1, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7918956086261175009, guid: 90452036f53c641418b1da43bed422c1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6689,7 +6697,7 @@ Transform:
   - {fileID: 172198067}
   - {fileID: 1169511813}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2127694675
 BoxCollider2D:

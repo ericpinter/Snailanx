@@ -22,4 +22,16 @@ public class EnemyAI : MonoBehaviour
         this.transform.position += MoveSpeed * v;
 
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        print("collided with " +other.gameObject);
+        if (other.gameObject.CompareTag("Spike"))
+        {
+            print("turning off");
+            this.gameObject.SetActive(false);
+
+        }
+    }
+
 }

@@ -46,7 +46,7 @@ public class FollowCam : MonoBehaviour
                 pos.y += spriteLocation.y - bottomBoundry;
             }
 
-            transform.position = pos;
+            transform.position = Vector3.Lerp(transform.position,pos,.01f);
         }
         
     }
