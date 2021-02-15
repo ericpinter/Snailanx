@@ -7,6 +7,7 @@ public class FollowCam : MonoBehaviour
     // Start is called before the first frame update
     public GameObject player;
     public float boundryPercent;
+    public float easing;
 
     private float leftBoundry;
     private float rightBoundry;
@@ -17,8 +18,8 @@ public class FollowCam : MonoBehaviour
         leftBoundry = boundryPercent * Camera.main.pixelWidth;
         rightBoundry = Camera.main.pixelWidth - leftBoundry;
 
-        topBoundry = boundryPercent * Camera.main.pixelHeight;
-        bottomBoundry = Camera.main.pixelHeight - topBoundry;
+        bottomBoundry = boundryPercent * Camera.main.pixelHeight;
+        topBoundry = Camera.main.pixelHeight - bottomBoundry;
     }
 
     // Update is called once per frame
@@ -37,16 +38,17 @@ public class FollowCam : MonoBehaviour
             {
                 pos.x += spriteLocation.x - rightBoundry;
             }
-            else if (spriteLocation.y < topBoundry)
+
+            if (spriteLocation.y < bottomBoundry)
             {
-                pos.y -= topBoundry - spriteLocation.y;
+                pos.y -= bottomBoundry - spriteLocation.y;
             }
-            else if (spriteLocation.y > bottomBoundry)
+            else if (spriteLocation.y > topBoundry)
             {
-                pos.y += spriteLocation.y - bottomBoundry;
+                pos.y += spriteLocation.y - topBoundry;
             }
 
-            transform.position = Vector3.Lerp(transform.position,pos,.01f);
+            transform.position = Vector3.Lerp(transform.position,pos, easing);
         }
         
     }

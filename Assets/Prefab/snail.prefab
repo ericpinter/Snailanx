@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: -4252543872135290234, guid: bdf800e93fb2b9e44bf57b2af4a603f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -124,6 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 736787785647527109}
   - component: {fileID: 7423246675991904005}
+  - component: {fileID: 6886457277582615909}
   m_Layer: 0
   m_Name: snail_0
   m_TagString: Untagged
@@ -196,3 +197,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6886457277582615909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8131591474675579153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae725b5926cf3c948ba852f0e1b01951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index:
+  - {fileID: -6207193392188836992, guid: dab36a874a07f3d4c8275ee4c15e0fbe, type: 3}
+  - {fileID: 8973212966699452106, guid: dab36a874a07f3d4c8275ee4c15e0fbe, type: 3}
+  - {fileID: -3443688358932414120, guid: dab36a874a07f3d4c8275ee4c15e0fbe, type: 3}
+  - {fileID: 7908504283364804799, guid: dab36a874a07f3d4c8275ee4c15e0fbe, type: 3}
+  fixedAngle: 0
+  isFixed: 0
