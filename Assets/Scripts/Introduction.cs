@@ -10,6 +10,7 @@ public class Introduction : MonoBehaviour
     public GameObject introNarration;
     public GameObject otherSnail;
     public GameObject transporter;
+    public GameObject player;
 
 
     // Start is called before the first frame update
@@ -17,6 +18,7 @@ public class Introduction : MonoBehaviour
     {
         st = GetComponent<SanailTalk>();
         introOver = false;
+        player.BroadcastMessage("EquipSpear",false);
     }
 
     // Update is called once per frame
@@ -33,6 +35,7 @@ public class Introduction : MonoBehaviour
             otherSnail.GetComponent<SanailTalk>().snailwords = "You're leaving Snailtopia? Good luck. You'll need it.";
             transporter.SetActive(true);
             introOver = true;
+            player.BroadcastMessage("EquipSpear",true);
         }
     }
     

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement; 
@@ -19,6 +20,12 @@ public class GameManager : MonoBehaviour
 
     public GameObject canvas;
     public GameObject events;
+
+    public List<String> zones;
+    public List<AudioClip> zoneAudio;
+
+
+    public AudioSource sound;
     
     public Coroutine dialogcor;
 
@@ -30,6 +37,7 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             DontDestroyOnLoad(canvas);
             DontDestroyOnLoad(events);
+            DontDestroyOnLoad(sound);
         }
         else {
             Destroy(gameObject);
@@ -109,8 +117,22 @@ public class GameManager : MonoBehaviour
 
     public void Transport(String newArea)
     {
+        print("transporting to");
         if (newArea == "MainMenu") GameOver();
         else StartCoroutine(LoadYourAsyncScene(newArea));
+        ChangeAudio(newArea);
+    }
+
+    public void ChangeAudio(String audioName)
+    {
+        for (int i = 0; i < zones.Count; i++)
+        {
+            if (zones[i].Equals(audioName) && !zoneAudio[i].Equals(this.sound.clip))
+            {
+                this.sound.clip = zoneAudio[i];
+                this.sound.Play();
+            }
+        }
     }
 
     IEnumerator ColorLerp(Color endValue, float duration)

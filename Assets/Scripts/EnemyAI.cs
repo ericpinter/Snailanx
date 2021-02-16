@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
@@ -38,6 +35,8 @@ public class EnemyAI : MonoBehaviour
 
             if (this.CompareTag("Boss"))
             {
+                GameManager.Instance.ChangeAudio("Endgame");
+
                 Stamp.SetActive(true);
                 Camera c = FindObjectOfType<Camera>();
                 c.GetComponent<FollowCam>().player = player;
