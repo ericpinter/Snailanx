@@ -61,12 +61,34 @@ public class GameManager : MonoBehaviour
         if (dialogcor != null) StopCoroutine(dialogcor);
     }
 
+    public void DialogTimeout(float time)
+    {
+        StartCoroutine(waitAndTimeout(time));
+    }
+
+    IEnumerator waitAndTimeout(float time)
+    {
+        yield return new WaitForSecondsRealtime(time);
+        HideDialog();
+    }
+
+    public void ScheuldeTransport(float time, String newArea)
+    {
+        StartCoroutine(waitAndTransport(time,newArea));
+    }
+    IEnumerator waitAndTransport(float time, String newArea)
+    {
+        yield return new WaitForSecondsRealtime(time);
+        Transport(newArea);
+    }
+
+
     IEnumerator TypeText(string text)
     {
         dialogText.GetComponent<TextMeshProUGUI>().text = "";
         foreach(char c in text.ToCharArray()){
             dialogText.GetComponent<TextMeshProUGUI>().text += c;
-            yield return new WaitForSeconds(0.07f);
+            yield return new WaitForSecondsRealtime(0.07f);
         }
     }
     public void StartButton()
@@ -82,14 +104,13 @@ public class GameManager : MonoBehaviour
         startButton.SetActive(true);
         StopAllCoroutines();
         HideDialog();
-        StartCoroutine(ColorLerp(new Color(1, 1, 1, 1), 2));
+        StartCoroutine(ColorLerp(new Color(1, 1, 1, 1), 1));
     }
 
     public void Transport(String newArea)
     {
-        StopAllCoroutines();
-        HideDialog();
-        StartCoroutine(LoadYourAsyncScene(newArea));
+        if (newArea == "MainMenu") GameOver();
+        else StartCoroutine(LoadYourAsyncScene(newArea));
     }
 
     IEnumerator ColorLerp(Color endValue, float duration)
@@ -122,7 +143,9 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
+        StopAllCoroutines();
         StartCoroutine(ColorLerp(new Color(1, 1, 1, 0), 2));
 
+        HideDialog();
     }
 }
