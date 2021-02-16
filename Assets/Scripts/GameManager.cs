@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,9 +19,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject canvas;
     public GameObject events;
-
-
-
+    
     public Coroutine dialogcor;
 
     private void Awake()
@@ -59,7 +58,7 @@ public class GameManager : MonoBehaviour
     public void HideDialog() 
     {
         this.dialogBox.SetActive(false);
-        StopCoroutine(dialogcor);
+        if (dialogcor != null) StopCoroutine(dialogcor);
     }
 
     IEnumerator TypeText(string text)
@@ -67,14 +66,14 @@ public class GameManager : MonoBehaviour
         dialogText.GetComponent<TextMeshProUGUI>().text = "";
         foreach(char c in text.ToCharArray()){
             dialogText.GetComponent<TextMeshProUGUI>().text += c;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.07f);
         }
     }
     public void StartButton()
     {
         startButton.SetActive(false);
         menuText.SetActive(false);
-        StartCoroutine(LoadYourAsyncScene("Snailtopia"));
+        Transport("Snailtopia");
 
     }
 
@@ -84,6 +83,13 @@ public class GameManager : MonoBehaviour
         StopAllCoroutines();
         HideDialog();
         StartCoroutine(ColorLerp(new Color(1, 1, 1, 1), 2));
+    }
+
+    public void Transport(String newArea)
+    {
+        StopAllCoroutines();
+        HideDialog();
+        StartCoroutine(LoadYourAsyncScene(newArea));
     }
 
     IEnumerator ColorLerp(Color endValue, float duration)

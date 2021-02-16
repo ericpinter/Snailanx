@@ -134,8 +134,8 @@ Texture2D:
   m_TextureDimension: 2
   m_TextureSettings:
     serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
+    m_FilterMode: 0
+    m_Aniso: 0
     m_MipBias: 0
     m_WrapU: 0
     m_WrapV: 0
@@ -166,8 +166,8 @@ MonoBehaviour:
   material: {fileID: -8699559660347224517}
   materialHashCode: -1196048064
   m_Version: 1.1.0
-  m_SourceFontFileGUID: 2b4596ad3b4026442a23ec33ccf56ea9
-  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 2b4596ad3b4026442a23ec33ccf56ea9, type: 3}
+  m_SourceFontFileGUID: adf0d51239c389b4ba01623857a86d74
+  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: adf0d51239c389b4ba01623857a86d74, type: 2}
   m_SourceFontFile: {fileID: 0}
   m_AtlasPopulationMode: 0
   m_FaceInfo:

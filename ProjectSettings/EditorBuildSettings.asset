@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Snailtopia.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Battleground.unity
+    guid: 905e1cfe08cabfe4bbb817260cf8e9c5
   m_configObjects: {}
