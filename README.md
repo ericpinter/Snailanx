@@ -27,3 +27,4 @@
     * Link: https://freemusicarchive.org/music/jim-hall/synth-kid-elsewhere/hope-is-not-lost
     * License: https://creativecommons.org/licenses/by/4.0/
 
+* Also they weren't used *in* the project but a software called Tiled and the unity plugin SuperTiled2Unity were fun to work with and made it possible to do some cool stuff with the tileset in the second zone.
