@@ -8,6 +8,7 @@
 * Aztec Tileset : Created by Sevarihk https://sevarihk.itch.io/aztec-asset-pack
 * Mime : Created by Nelson Yiap https://opengameart.org/content/french-mime-with-beret-16x16-animated-spritesheet
 * Quaver Font : Made by Nathan Scott https://caffinate.itch.io/quaver
+* Enemy hit sound : Made by Maskedsound https://maskedsound.itch.io/8-bit-sfx-pack
 * Stamp : Made by us (that's why it looks so bad)
 
 * Tittle Screen by sawsquarenoise

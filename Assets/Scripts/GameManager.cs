@@ -109,6 +109,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        menuText.SetActive(true);
         startButton.SetActive(true);
         StopAllCoroutines();
         HideDialog();

@@ -198,7 +198,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &114079752
 Transform:
   m_ObjectHideFlags: 0
@@ -277,7 +277,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.52082443, y: 0.71351385}
+  m_Offset: {x: -0.52082443, y: -0.1883297}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -288,7 +288,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.469454, y: 9.499742}
+  m_Size: {x: 9.469454, y: 3.386301}
   m_EdgeRadius: 0
 --- !u!114 &114079755
 MonoBehaviour:
@@ -306,6 +306,7 @@ MonoBehaviour:
     the French, returned to a simple life of bureaucracy and friendship.
   singleUse: 0
   endsGame: 1
+  musicCue: Endgame
 --- !u!4 &161001654 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9173924276136518002, guid: d79e2aa9e7e91084fad322a53ac38f5f, type: 3}
@@ -3661,6 +3662,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 8461483979414776090, guid: d33b96b7a84658b4ca4c730999eaf8e2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d33b96b7a84658b4ca4c730999eaf8e2, type: 3}
 --- !u!4 &1158078754 stripped
@@ -3840,9 +3845,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97196284fc0866d4583b71c7d977bdd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snailwords: Prepare to die!
+  snailwords: Mon Dieu! A whole platter of escargot has come for the stamp! Very
+    well. Have at you!
   singleUse: 1
   endsGame: 0
+  musicCue: BossFight
 --- !u!1001 &1381346624
 PrefabInstance:
   m_ObjectHideFlags: 0

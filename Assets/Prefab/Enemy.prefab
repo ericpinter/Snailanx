@@ -165,3 +165,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 0.01
+  ignoreTrigger: 0
+  triggerBox: {fileID: 0}
+  Stamp: {fileID: 0}
+  player: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: 3fe10caf677def74786d3eb71d607d3a, type: 3}

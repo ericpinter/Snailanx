@@ -8,6 +8,7 @@ public class EnemyAI : MonoBehaviour
     public Collider2D triggerBox;
     public GameObject Stamp;
     public GameObject player;
+    public AudioClip deathSound;
 
     // Start is called before the first frame update
     void Start()
@@ -32,13 +33,14 @@ public class EnemyAI : MonoBehaviour
 
             print("turning off");
             this.gameObject.SetActive(false);
+            Camera c = FindObjectOfType<Camera>();
+            Vector3 averagePosition = (c.transform.position + this.transform.position) / 2.0f;
+
+            AudioSource.PlayClipAtPoint(deathSound, averagePosition,1f);
 
             if (this.CompareTag("Boss"))
             {
-                GameManager.Instance.ChangeAudio("Endgame");
-
-                Stamp.SetActive(true);
-                Camera c = FindObjectOfType<Camera>();
+                Stamp.GetComponent<Collider2D>().enabled = true;
                 c.GetComponent<FollowCam>().player = player;
             }
         }

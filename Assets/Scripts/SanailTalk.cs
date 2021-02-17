@@ -9,6 +9,7 @@ public class SanailTalk : MonoBehaviour
     public bool talkedTo { get; private set; }
     public bool singleUse;
     public bool endsGame;
+    public String musicCue;
 
     private float timeStamp;
     // Start is called before the first frame update
@@ -27,15 +28,16 @@ public class SanailTalk : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            if (musicCue != null) GameManager.Instance.ChangeAudio(musicCue); 
             this.timeStamp = Time.realtimeSinceStartup;
 
             if (this.CompareTag("Boss"))
             {
                 SendMessage("removeTrigger");
-                SendMessage("setSpeed", .02);
+                SendMessage("setSpeed", .01);
                 Camera c = FindObjectOfType<Camera>();
                 c.GetComponent<FollowCam>().player = this.gameObject;
-                GameManager.Instance.DialogTimeout(3f);
+                //GameManager.Instance.DialogTimeout(8f);
             }
 
             if (endsGame)

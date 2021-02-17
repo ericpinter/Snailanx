@@ -1141,7 +1141,7 @@ MonoBehaviour:
   zones:
   - Snailtopia
   - Battleground
-  - Boss
+  - BossFight
   - Endgame
   zoneAudio:
   - {fileID: 8300000, guid: 3a2cb8794e41300429991e97df90c576, type: 3}
